@@ -264,20 +264,19 @@
     }
 
     function updateSceneImage(responseText) {
-        let sceneMatch = responseText.match(/場景：(.*?)\s/); // 使用正則表達式匹配場景描述
-        if (sceneMatch && sceneMatch[1]) {
-            let scene = sceneMatch[1];
-            console.log(scene);
+        // let sceneMatch = responseText.match(/場景：(.*?)\s/); // 使用正則表達式匹配場景描述
+        // if (sceneMatch && sceneMatch[1]) {
+            // let scene = sceneMatch[1];
+            // console.log(scene);
             // 檢查scene是否包含"宿舍"
-            if (scene.includes("畢業典禮")) {
+            if (responseText.includes("畢業")) {
                 document.getElementById('backgroundWrapper').style.backgroundImage = "url('./img/grat.jpg')";
-            } else if (scene.includes("餐廳")) {
+            } else if (responseText.includes("兩年")) {
                 document.getElementById('backgroundWrapper').style.backgroundImage = "url('./img/two.jpg')";
-            } else if (scene.includes("派對")) {
+            } else if (responseText.includes("十年")) {
                 document.getElementById('backgroundWrapper').style.backgroundImage = "url('./img/ten.jpg')";
             }
         }
-    }
 
     function formatText(text) {
         // Replace ** with a new line and bold tag
